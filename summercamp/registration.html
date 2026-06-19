@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sunshine Summer Camp Registration</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* BACKGROUND */
+body{
+background:
+linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,.4)),
+url("banner.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+min-height:100vh;
+padding-top:90px;
+}
+
+/* NAVBAR */
+.navbar{
+border-radius:20px;
+margin:15px 30px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.navbar-brand{
+font-size:30px;
+font-weight:bold;
+color:#2563eb !important;
+}
+
+.nav-link{
+color:#2563eb !important;
+font-weight:500;
+}
+
+.nav-link:hover{
+color:#1d4ed8 !important;
+}
+
+/* CONTAINER */
+.container{
+max-width:800px;
+margin:auto;
+background:rgba(255,255,255,.92);
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+/* TITLE */
+h1{
+text-align:center;
+color:#ff7043;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:#555;
+margin-bottom:25px;
+}
+
+/* SECTION HEADINGS */
+h3{
+color:#ff7043;
+margin:15px 0;
+}
+
+/* FORM INPUTS */
+label{
+font-weight:bold;
+margin-top:10px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:15px;
+}
+
+textarea{
+resize:none;
+}
+
+/* CHECKBOX */
+.checkbox{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.checkbox input{
+width:auto;
+}
+
+/* BUTTON */
+button.submit-btn,
+button.btn-success{
+width:100%;
+padding:12px;
+font-size:18px;
+border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+margin-top:25px;
+color:#555;
+font-size:14px;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE FIX */
+/* ========================= */
+@media (max-width: 991px) {
+
+  .navbar{
+    margin:10px;
+  }
+
+  .navbar-nav {
+    text-align:center;
+    padding:10px 0;
+  }
+
+  .navbar-nav .nav-item {
+    margin:8px 0;
+  }
+
+  .navbar-collapse {
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    margin-top:10px;
+    padding:15px;
+  }
+
+  .nav-link {
+    display:block;
+    padding:10px;
+    border-radius:10px;
+  }
+
+  .nav-link:hover {
+    background:#e0f2fe;
+  }
+
+  .container{
+    padding:20px;
+  }
+
+  h1{
+    font-size:26px;
+  }
+
+  .subtitle{
+    font-size:14px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+
+  <div class="container-fluid px-5">
+
+    <a class="navbar-brand fw-bold" href="index.html">
+      Sunshine Camp
+    </a>
+
+    <button class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link active fw-bold" href="registration.html">Registration</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+</nav>
+
+<!-- FORM -->
+<div class="container mt-5">
+
+<h1>Sunshine Summer Camp 2026</h1>
+<p class="subtitle">Fun • Learning • Adventure</p>
+
+<form onsubmit="return validateForm()">
+
+<h3>Camper Details</h3>
+
+<label>Student Name</label>
+<input type="text" id="name" class="form-control">
+
+<label>Date of Birth</label>
+<input type="date" id="dob" class="form-control">
+
+<label>Age</label>
+<input type="number" id="age" min="5" max="18" class="form-control">
+
+<label>Gender</label>
+<select id="gender" class="form-select">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<label>School Name</label>
+<input type="text" id="school" class="form-control">
+
+<h3>Parent Information</h3>
+
+<label>Parent Name</label>
+<input type="text" id="parent" class="form-control">
+
+<label>Mobile Number</label>
+<input type="tel" id="phone" maxlength="10" class="form-control">
+
+<label>Email</label>
+<input type="email" id="email" class="form-control">
+
+<h3>Camp Details</h3>
+
+<label>Camp Session</label>
+<select id="session" class="form-select">
+<option value="">Select Session</option>
+<option>Adventure Camp</option>
+<option>Science Camp</option>
+<option>Arts & Crafts Camp</option>
+<option>Leadership Camp</option>
+</select>
+
+<label>Medical Conditions</label>
+<textarea rows="3" id="medical" class="form-control"></textarea>
+
+<label>Emergency Contact</label>
+<input type="tel" id="emergency" maxlength="10" class="form-control">
+
+<label>Address</label>
+<textarea rows="4" id="address" class="form-control"></textarea>
+
+<div class="checkbox">
+<input type="checkbox" id="agree">
+<span>I confirm the information.</span>
+</div>
+
+<button type="submit" class="btn btn-success">
+Register Now
+</button>
+
+</form>
+
+<footer>
+© 2026 Sunshine Summer Camp
+</footer>
+
+</div>
+
+<script>
+function validateForm(){
+
+let name=document.getElementById("name").value.trim();
+let age=document.getElementById("age").value;
+let phone=document.getElementById("phone").value;
+let email=document.getElementById("email").value;
+
+if(name==""){
+alert("Enter Student Name");
+return false;
+}
+
+if(age<5 || age>18){
+alert("Age must be 5–18");
+return false;
+}
+
+if(!/^[0-9]{10}$/.test(phone)){
+alert("Enter Valid Mobile Number");
+return false;
+}
+
+let pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!pattern.test(email)){
+alert("Enter Valid Email");
+return false;
+}
+
+if(!document.getElementById("agree").checked){
+alert("Please accept declaration");
+return false;
+}
+
+window.location.href="success.html";
+return false;
+
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
